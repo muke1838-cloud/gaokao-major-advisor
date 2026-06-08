@@ -1,0 +1,6 @@
+interface:
+  display_name: "高考专业志愿顾问"
+  short_description: "面向高考志愿的专业、行业、岗位与四年趋势分析报告生成"
+  default_prompt: "Use $gaokao-major-advisor to analyze a Gaokao major choice and forecast four-year career potential."
+policy:
+  allow_implicit_invocation: true

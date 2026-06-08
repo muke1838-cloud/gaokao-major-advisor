@@ -1,0 +1,180 @@
+# Research Framework
+
+Use this file when preparing the evidence and judgment behind a Gaokao major recommendation.
+
+## Intake Checklist
+
+Collect what is available. Do not block if the user only gave a major.
+
+Required:
+- Target major
+
+Helpful:
+- Province and score/rank band
+- Undergraduate, junior college, or uncertain
+- Preferred cities or regions
+- Family budget and need for stable income
+- Willingness to pursue postgraduate study
+- Interest areas and disliked work styles
+- Risk preference: stable, balanced, aggressive
+- Physical constraints or licensing constraints where relevant
+
+## Major Normalization
+
+For the target major, identify:
+- Official Chinese major name and discipline category
+- Similar majors that students often confuse with it
+- Core courses and real skill outputs
+- Common postgraduate directions
+- Certifications, licenses, or portfolio requirements
+- Whether the major is a direct hiring signal or mainly a foundation
+
+Examples:
+- `临床医学` has a strong credential path and long training cycle.
+- `生物科学` often needs postgraduate study for stronger research or industry roles.
+- `计算机科学与技术` maps broadly, but job quality depends heavily on project ability and school tier.
+
+## Industry And Job Mapping
+
+Classify opportunities:
+
+| Route | Meaning | Keep only if |
+| --- | --- | --- |
+| 主航道 | The most direct employment path | The major is a common or preferred hiring background |
+| 相邻航道 | Adjacent path with manageable skill gap | Student can bridge with internships, projects, minor, or certifications |
+| 备选航道 | Longer transition path | There is a realistic college action plan to enter it |
+
+For each route, list:
+- Industry
+- Job titles
+- Main tasks
+- Required skills
+- Entry threshold
+- Major-fit strength: strong, medium, weak
+- Whether postgraduate study is commonly needed
+
+Drop routes that are only loosely connected or sound attractive but lack realistic entry paths.
+
+## Evidence Sources
+
+Use fresh sources for current claims:
+- Government policy, official statistics, ministry documents, and local industrial plans
+- Company career pages and campus recruiting pages
+- Public job postings from major recruiting platforms
+- Salary reports from credible recruiting or consulting organizations
+- Listed-company annual reports and investor presentations
+- Industry reports from credible institutions
+- News only for recent changes; avoid using it as the sole basis
+
+For each major claim, record:
+- Source name
+- Date published or accessed
+- What the source proves
+- Limits or possible bias
+
+If sources disagree, prefer primary/official sources for policy and company disclosures, and broad recruiting samples for salary.
+
+## Company Tiering
+
+Use representative employers, not exhaustive rankings.
+
+`头部` usually means one or more of:
+- National or global market leader
+- Strong brand and large hiring volume
+- High revenue or market share
+- Important product/platform position
+- Strong campus recruiting presence
+
+`腰部` usually means:
+- Established second-tier player
+- Regional leader or vertical specialist
+- Stable hiring but smaller platform
+- Decent learning opportunities with lower brand premium
+
+`长尾/区域型` usually means:
+- Local employers, suppliers, outsourcing firms, small hospitals/schools/factories, or niche companies
+- Easier entry or wider distribution
+- Lower salary ceiling or weaker training system in many cases
+- Sometimes more stable in local public-service or regional industries
+
+Do not call the third tier "bad". Explain tradeoffs.
+
+## Salary Handling
+
+Salary is volatile and often platform-biased. Use ranges.
+
+Always try to separate:
+- City or region
+- Company tier
+- Job title
+- Experience level: 应届/校招, 1-3年, 3-5年
+- Cash pay vs total compensation if known
+- Sample size or confidence if available
+- Source and date
+
+Confidence labels:
+
+| Confidence | Use when |
+| --- | --- |
+| 高 | Multiple recent sources agree or official campus salary is public |
+| 中 | Several recent job postings or salary reports broadly align |
+| 低 | Sparse samples, old data, unclear city, or role names are mixed |
+| 待验证 | No credible current salary source found |
+
+Never turn one job posting into an industry average.
+
+## Four-Year Forecast Model
+
+Forecast the student's graduation window, not only today's job market.
+
+Score each job route from 1 to 5:
+
+| Dimension | What to examine |
+| --- | --- |
+| Demand growth | Is hiring likely to expand or shrink? |
+| Policy support | Does national/local policy create durable demand? |
+| Technology impact | Does AI/automation augment or replace entry-level work? |
+| Entry barrier | Is there a defensible license, degree, portfolio, or domain moat? |
+| Supply pressure | Are too many graduates chasing the same role? |
+| Salary upside | Is pay likely to rise with experience? |
+| Stability | Is the role cyclical, subsidy-driven, or capital-market dependent? |
+| Major fit | Does the major directly prepare the student? |
+
+Convert the evidence into one of four labels:
+
+| Label | Meaning |
+| --- | --- |
+| 上升 | Demand and quality opportunities likely improve |
+| 稳定 | Demand remains real, but growth is moderate |
+| 分化 | Top students or top schools do well; weak preparation suffers |
+| 下降 | Demand, salary, or entry quality likely weakens |
+
+Most routes should be `分化` unless evidence clearly supports another label.
+
+## Risk Rules
+
+Flag these risks clearly:
+- Major requires postgraduate study but the user wants quick employment.
+- Industry is policy-driven and funding could change.
+- Salary looks high but only in a few cities or top companies.
+- Entry-level work is easy to automate.
+- Job route depends more on school tier, portfolio, internships, or family resources than on the major itself.
+- Demand exists, but working conditions or burnout risk are high.
+
+## Recommendation Logic
+
+Use four verdicts:
+
+| Verdict | Use when |
+| --- | --- |
+| 推荐 | Strong major fit, credible demand, acceptable risk, and clear college action path |
+| 谨慎推荐 | Opportunity exists, but student must accept constraints such as postgraduate study, city concentration, or heavy competition |
+| 不优先推荐 | Better alternatives exist for the same goal, or the risk/reward is weak |
+| 只适合特定学生 | Good only for students with specific interests, resources, academic strength, or risk preference |
+
+End with practical choices:
+- Better adjacent majors
+- Best minors or double majors
+- Skills to build in year 1-2
+- Internships or competitions to seek
+- Whether postgraduate study is strategically important
