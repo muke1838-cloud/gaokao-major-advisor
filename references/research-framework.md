@@ -146,10 +146,16 @@ Convert the evidence into one of four labels:
 | --- | --- |
 | 上升 | Demand and quality opportunities likely improve |
 | 稳定 | Demand remains real, but growth is moderate |
-| 分化 | Top students or top schools do well; weak preparation suffers |
+| 看人差距大 | Good schools, strong skills, and strong internships lead to good outcomes; weak preparation makes the route difficult |
 | 下降 | Demand, salary, or entry quality likely weakens |
 
-Most routes should be `分化` unless evidence clearly supports another label.
+Use plain-language labels in final reports:
+- `上升`: 机会变多，行业或岗位整体更有前景。
+- `稳定`: 机会还在，但不会明显爆发。
+- `看人差距大`: 有人会发展很好，有人会比较难，关键看学校层次、个人能力、实习经历、证书或家庭资源。
+- `下降`: 机会变少，薪资、岗位质量或入门机会可能变差。
+
+Most routes should be `看人差距大` unless evidence clearly supports another label.
 
 ## Risk Rules
 

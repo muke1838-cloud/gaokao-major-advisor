@@ -51,7 +51,7 @@ Help a Gaokao student evaluate whether a target major still leads to promising i
    - Explain non-salary factors: overtime, mobility, licensing, postgraduate premium, and cyclical layoffs.
 
 7. Forecast four-year potential.
-   - Classify each route as `上升`, `稳定`, `分化`, or `下降`.
+   - Classify each route as `上升`, `稳定`, `看人差距大`, or `下降`.
    - Consider AI/automation, industrial upgrading, government policy, capital spending, demographics, supply of graduates, and credential inflation.
    - State leading indicators the student should keep watching during college.
 
