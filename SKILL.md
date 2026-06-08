@@ -64,6 +64,14 @@ Help a Gaokao student evaluate whether a target major still leads to promising i
 
 Use `references/report-template.md` unless the user asks for a shorter answer. Keep Chinese output clear enough for parents and students to understand.
 
+When the user asks for a webpage, HTML file, shareable report, printable report, or one report per major:
+
+- Create one standalone static HTML file per major.
+- Save it under `reports/YYYY-MM-DD_<major-slug>.html` in the user's current project unless the user provides another path.
+- Use `references/web-report-guide.md` and `assets/web-report-template.html`.
+- Keep all CSS and any tiny JavaScript inline so the file opens directly in a browser without a dev server.
+- Do not put generated user reports inside the skill directory unless the user explicitly asks to edit examples or assets.
+
 Minimum sections:
 
 1. 结论先行
@@ -80,6 +88,8 @@ Minimum sections:
 
 - `references/research-framework.md`: Use for evidence gathering, company tiering, salary handling, trend scoring, and risk rules.
 - `references/report-template.md`: Use for the final Chinese report structure.
+- `references/web-report-guide.md`: Use when creating a standalone webpage report.
+- `assets/web-report-template.html`: Copy and fill when the user wants an individual HTML report.
 
 ## Quality Bar
 

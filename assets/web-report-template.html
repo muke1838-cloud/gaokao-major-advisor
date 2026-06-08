@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{MAJOR}}｜高考专业前景分析报告</title>
+  <style>
+    :root {
+      --paper: #f6f7f2;
+      --surface: #ffffff;
+      --ink: #20201d;
+      --muted: #696b61;
+      --line: #d9ddd0;
+      --teal: #28665f;
+      --teal-soft: #e4f0ec;
+      --red: #b23a2f;
+      --red-soft: #f6e5e1;
+      --amber: #b7791f;
+      --amber-soft: #f4ead7;
+      --green: #2f6846;
+      --green-soft: #e4efe7;
+      --shadow: 0 18px 48px rgba(32, 32, 29, 0.09);
+      --radius: 8px;
+      --content: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(40, 102, 95, 0.07) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(40, 102, 95, 0.05) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px;
+      font-family: "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .page {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 12px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--red), var(--teal));
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font: 700 13px "Noto Sans SC", "PingFang SC", sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(32, 32, 29, 0.06);
+    }
+
+    button:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: 8px minmax(0, 1fr);
+      background: rgba(255, 255, 255, 0.7);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .verdict-rail {
+      background: linear-gradient(180deg, var(--teal), var(--red));
+      border-radius: 999px;
+    }
+
+    .masthead-main {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--teal);
+      font: 800 13px "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      overflow-wrap: anywhere;
+    }
+
+    .verdict-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: #fbfcf8;
+      min-height: 92px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font: 700 12px "Noto Sans SC", "PingFang SC", sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .metric strong {
+      display: block;
+      font: 900 20px "Noto Sans SC", "PingFang SC", sans-serif;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    .metric.recommend strong {
+      color: var(--red);
+    }
+
+    .summary-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .panel h2,
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .panel ul,
+    .section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .risk-list li::marker {
+      color: var(--red);
+    }
+
+    .section {
+      margin-top: 22px;
+      background: transparent;
+      border: 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      padding: 34px 0 0;
+    }
+
+    .masthead,
+    .masthead-main,
+    .panel,
+    .metric,
+    .section,
+    .table-wrap,
+    .year-step,
+    table,
+    tr,
+    td {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font: 800 12px "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      max-width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #edf2ea;
+      color: var(--ink);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font: 800 12px "Noto Sans SC", "PingFang SC", sans-serif;
+      white-space: nowrap;
+    }
+
+    .tag.up {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .tag.stable {
+      color: var(--teal);
+      background: var(--teal-soft);
+    }
+
+    .tag.gap {
+      color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    .tag.down {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .note {
+      border-left: 4px solid var(--amber);
+      background: var(--amber-soft);
+      padding: 14px 16px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #4f3414;
+      font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .good {
+      border-top: 4px solid var(--teal);
+    }
+
+    .bad {
+      border-top: 4px solid var(--red);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .year-step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+      padding: 16px;
+    }
+
+    .year-step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font: 900 18px "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    .sources {
+      font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin: 30px 0 0;
+      color: var(--muted);
+      font: 13px "Noto Sans SC", "PingFang SC", sans-serif;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        width: calc(100vw - 24px);
+        max-width: var(--content);
+        padding-top: 16px;
+      }
+
+      .topbar,
+      .summary-layout,
+      .split,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        display: grid;
+        align-items: start;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .masthead-main {
+        padding: 22px 18px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .verdict-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section {
+        padding: 28px 0 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html,
+      body {
+        overflow-x: clip;
+      }
+
+      body {
+        background-size: 34px 34px;
+      }
+
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 14px 12px 44px;
+      }
+
+      .topbar {
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .brand {
+        font-size: 13px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 180px;
+      }
+
+      .masthead {
+        display: block;
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .verdict-rail {
+        width: 100%;
+        height: 6px;
+        margin-bottom: 14px;
+      }
+
+      .masthead-main {
+        padding: 0;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      .verdict-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        min-height: auto;
+        padding: 12px 14px;
+      }
+
+      .summary-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .panel {
+        padding: 18px;
+        width: 100%;
+      }
+
+      .panel h2,
+      .section h2 {
+        font-size: 22px;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+        background: transparent;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      table {
+        min-width: 0;
+        font-size: 14px;
+      }
+
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      tbody {
+        display: grid;
+        gap: 12px;
+      }
+
+      tr {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        overflow: hidden;
+        width: 100%;
+      }
+
+      td {
+        display: block;
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+
+      td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-weight: 900;
+      }
+
+      td:last-child {
+        border-bottom: 0;
+      }
+
+      .tag {
+        width: fit-content;
+        white-space: normal;
+      }
+
+      .note {
+        margin-bottom: 12px;
+      }
+
+      .timeline {
+        gap: 10px;
+      }
+
+      .year-step {
+        padding: 14px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .actions {
+        display: none;
+      }
+
+      .masthead,
+      .section,
+      .panel {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      a {
+        color: var(--ink);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"></span><span>高考专业前景分析</span></div>
+      <div class="actions">
+        <button type="button" onclick="window.print()">打印 / 保存 PDF</button>
+      </div>
+    </header>
+
+    <section class="masthead">
+      <div class="verdict-rail"></div>
+      <div class="masthead-main">
+        <p class="eyebrow">独立报告｜{{GENERATED_AT}}</p>
+        <h1>{{MAJOR}}</h1>
+        <p class="subtitle">{{ONE_SENTENCE_VERDICT}}</p>
+
+        <div class="verdict-grid">
+          <div class="metric recommend"><span>报考建议</span><strong>{{RECOMMENDATION}}</strong></div>
+          <div class="metric"><span>预测年份</span><strong>{{FORECAST_YEAR}}</strong></div>
+          <div class="metric"><span>趋势判断</span><strong>{{TREND_LABEL}}</strong></div>
+          <div class="metric"><span>最大变量</span><strong>{{BIGGEST_VARIABLE}}</strong></div>
+        </div>
+
+        <div class="summary-layout">
+          <article class="panel">
+            <h2>为什么这样判断</h2>
+            <ul>
+              <li>{{KEY_REASON_1}}</li>
+              <li>{{KEY_REASON_2}}</li>
+              <li>{{KEY_REASON_3}}</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h2>最大风险</h2>
+            <ul class="risk-list">
+              <li>{{RISK_1}}</li>
+              <li>{{RISK_2}}</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="major">
+      <span class="section-kicker">01｜专业拆解</span>
+      <h2>这个专业到底在学什么</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>项目</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>学科类别</td><td>{{DISCIPLINE}}</td></tr>
+            <tr><td>核心课程</td><td>{{CORE_COURSES}}</td></tr>
+            <tr><td>核心能力</td><td>{{CORE_SKILLS}}</td></tr>
+            <tr><td>常见误区</td><td>{{COMMON_MISUNDERSTANDING}}</td></tr>
+            <tr><td>读研必要性</td><td>{{POSTGRAD_NEED}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="routes">
+      <span class="section-kicker">02｜行业和岗位</span>
+      <h2>它能通向哪些真实工作</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>路线</th><th>行业</th><th>代表岗位</th><th>专业匹配度</th><th>门槛</th><th>四年后判断</th></tr>
+          </thead>
+          <tbody>
+            {{ROUTE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="salary">
+      <span class="section-kicker">03｜公司层级与薪资</span>
+      <h2>不同平台的机会和待遇差异</h2>
+      <p class="note">薪资是公开样本区间，不是承诺。城市、学校层次、实习经历、证书和公司口径都会显著影响结果。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>层级</th><th>代表公司/机构 3 家</th><th>应届/校招</th><th>1-3 年</th><th>3-5 年</th><th>备注</th></tr>
+          </thead>
+          <tbody>
+            {{SALARY_ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="forces">
+      <span class="section-kicker">04｜外部变化</span>
+      <h2>政策、科技和市场会怎么影响它</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>影响因素</th><th>当前证据</th><th>对岗位的影响</th><th>四年后含义</th></tr>
+          </thead>
+          <tbody>
+            {{FORCE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="outlook">
+      <span class="section-kicker">05｜四年后判断</span>
+      <h2>哪些方向更值得准备</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>岗位</th><th>判断</th><th>为什么</th><th>需要警惕的信号</th></tr>
+          </thead>
+          <tbody>
+            {{OUTLOOK_ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <span class="section-kicker">06｜人群匹配</span>
+      <h2>什么样的学生适合报</h2>
+      <div class="split">
+        <article class="panel good">
+          <h2>适合</h2>
+          <ul>
+            {{FIT_ITEMS}}
+          </ul>
+        </article>
+        <article class="panel bad">
+          <h2>不适合</h2>
+          <ul>
+            {{MISFIT_ITEMS}}
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <span class="section-kicker">07｜大学四年行动建议</span>
+      <h2>如果要报，大学期间怎么布局</h2>
+      <div class="timeline">
+        <div class="year-step"><strong>大一</strong>{{YEAR_1_ACTION}}</div>
+        <div class="year-step"><strong>大二</strong>{{YEAR_2_ACTION}}</div>
+        <div class="year-step"><strong>大三</strong>{{YEAR_3_ACTION}}</div>
+        <div class="year-step"><strong>大四</strong>{{YEAR_4_ACTION}}</div>
+      </div>
+    </section>
+
+    <section class="section" id="alternatives">
+      <span class="section-kicker">08｜可替代专业</span>
+      <h2>如果目标类似，还有哪些选择</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>替代专业</th><th>为什么可能更好</th><th>代价</th></tr>
+          </thead>
+          <tbody>
+            {{ALTERNATIVE_ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <span class="section-kicker">09｜信息来源与不确定性</span>
+      <h2>哪些信息还需要继续验证</h2>
+      <div class="sources">
+        <h3>信息来源</h3>
+        <ul>
+          {{SOURCE_ITEMS}}
+        </ul>
+        <h3>不确定性</h3>
+        <ul>
+          {{UNCERTAINTY_ITEMS}}
+        </ul>
+      </div>
+    </section>
+
+    <p class="footer">本报告用于高考志愿决策参考，不构成就业、薪酬或录取承诺。</p>
+  </main>
+  <script>
+    document.querySelectorAll("table").forEach((table) => {
+      const headers = Array.from(table.querySelectorAll("thead th")).map((th) => th.textContent.trim());
+      table.querySelectorAll("tbody tr").forEach((row) => {
+        Array.from(row.children).forEach((cell, index) => {
+          if (!cell.hasAttribute("data-label") && headers[index]) {
+            cell.setAttribute("data-label", headers[index]);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
