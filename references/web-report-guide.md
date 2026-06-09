@@ -1,6 +1,6 @@
 # Web Report Guide
 
-Use this guide when the user asks for a beautiful webpage, HTML file, shareable report, printable report, or one independent report per major.
+Use this guide for every complete major analysis report. The default deliverable is a beautiful standalone webpage, not a long chat answer.
 
 ## Output Contract
 
@@ -11,6 +11,7 @@ Use this guide when the user asks for a beautiful webpage, HTML file, shareable 
 - Keep the report readable for parents and students on mobile and desktop.
 - Do not rely on horizontal table scrolling as the mobile experience; table rows must become labeled cards on phones.
 - Keep source links in the report. Mark missing or weak evidence as `待验证`.
+- In chat, return only a short verdict, the report path, and verification evidence.
 
 ## Design Direction
 

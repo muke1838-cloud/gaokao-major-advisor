@@ -62,15 +62,22 @@ Help a Gaokao student evaluate whether a target major still leads to promising i
 
 ## Output Shape
 
-Use `references/report-template.md` unless the user asks for a shorter answer. Keep Chinese output clear enough for parents and students to understand.
+For every complete major analysis, create a standalone static HTML report by default. The chat response should only summarize the verdict briefly and provide the file path plus validation evidence.
 
-When the user asks for a webpage, HTML file, shareable report, printable report, or one report per major:
+Use Markdown only when:
+- the user explicitly asks for a quick text answer,
+- the user is brainstorming before requesting a full report,
+- web/current-data access is unavailable and the user only wants a framework.
+
+When creating the report:
 
 - Create one standalone static HTML file per major.
 - Save it under `reports/YYYY-MM-DD_<major-slug>.html` in the user's current project unless the user provides another path.
 - Use `references/web-report-guide.md` and `assets/web-report-template.html`.
 - Keep all CSS and any tiny JavaScript inline so the file opens directly in a browser without a dev server.
 - Do not put generated user reports inside the skill directory unless the user explicitly asks to edit examples or assets.
+
+Use `references/report-template.md` only as the content outline behind the webpage. Keep Chinese output clear enough for parents and students to understand.
 
 Minimum sections:
 

@@ -587,6 +587,389 @@
       }
     }
 
+    /* Editorial magazine skin */
+    :root {
+      --paper: #f7f1e4;
+      --surface: rgba(255, 252, 244, 0.86);
+      --ink: #161713;
+      --muted: #665f54;
+      --line: #d8c8ab;
+      --teal: #155f5b;
+      --teal-soft: #e6f0eb;
+      --red: #b64832;
+      --red-soft: #f6e3dc;
+      --amber: #b77b24;
+      --amber-soft: #f3e7d1;
+      --green: #2d684c;
+      --green-soft: #e3eee5;
+      --shadow: 0 28px 80px rgba(22, 23, 19, 0.12);
+      --radius: 0;
+      --content: 1180px;
+    }
+
+    body {
+      background:
+        linear-gradient(118deg, rgba(182, 72, 50, 0.1), transparent 34%),
+        linear-gradient(90deg, rgba(21, 95, 91, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(21, 95, 91, 0.04) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 36px 36px, 36px 36px, auto;
+      font-family: "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    }
+
+    .page {
+      padding: 34px 0 72px;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      text-transform: none;
+    }
+
+    .brand {
+      gap: 12px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 10px;
+      border-radius: 0;
+      background: linear-gradient(90deg, var(--red) 0 44%, var(--teal) 44% 100%);
+    }
+
+    button {
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      border-color: var(--ink);
+      padding: 10px 14px;
+    }
+
+    .masthead {
+      position: relative;
+      grid-template-columns: 154px minmax(0, 1fr);
+      background: linear-gradient(90deg, rgba(255, 250, 240, 0.94), rgba(255, 252, 244, 0.72));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .masthead::after {
+      content: "";
+      position: absolute;
+      left: 154px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .verdict-rail {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: flex-start;
+      min-height: 250px;
+      padding: 34px 22px;
+      border-radius: 0;
+      background: transparent;
+      color: var(--red);
+    }
+
+    .verdict-rail::before {
+      content: "04";
+      font: 900 64px/0.85 "Noto Serif SC", "Songti SC", serif;
+    }
+
+    .verdict-rail::after {
+      content: "YEAR OUTLOOK\A专业前景专题";
+      white-space: pre-line;
+      color: var(--muted);
+      font: 900 12px/1.35 "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    .masthead-main {
+      padding: 42px 0 42px 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 6.2vw, 76px);
+      line-height: 0.98;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin-top: 18px;
+      font-size: 18px;
+      color: #514b42;
+    }
+
+    .verdict-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, 0.58);
+      border: 0;
+      border-top: 5px solid var(--teal);
+      box-shadow: none;
+      min-height: 118px;
+      padding: 16px;
+    }
+
+    .metric span {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .metric strong {
+      margin-top: 8px;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .summary-layout {
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .panel {
+      background: rgba(255, 252, 244, 0.78);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .panel h2,
+    .section h2 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-weight: 900;
+    }
+
+    .section {
+      position: relative;
+      margin-top: 38px;
+      padding: 42px 0 0 170px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      position: absolute;
+      left: 0;
+      top: 44px;
+      max-width: 130px;
+      color: var(--red);
+      font: 900 12px/1.45 "Noto Sans SC", "PingFang SC", sans-serif;
+    }
+
+    .section > h2 {
+      max-width: 720px;
+      margin-bottom: 18px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.08;
+    }
+
+    .table-wrap {
+      border-radius: 0;
+      border-color: var(--line);
+      border-top: 5px solid var(--teal);
+      background: rgba(255, 252, 244, 0.88);
+      box-shadow: 0 16px 44px rgba(22, 23, 19, 0.06);
+    }
+
+    table {
+      background: transparent;
+    }
+
+    th {
+      background: rgba(21, 95, 91, 0.08);
+      color: #3f3a32;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      border-bottom-color: rgba(216, 200, 171, 0.84);
+    }
+
+    .tag {
+      border-radius: 0;
+      border: 1px solid currentColor;
+      background: transparent;
+    }
+
+    .tag.up {
+      color: var(--green);
+      background: rgba(45, 104, 76, 0.08);
+    }
+
+    .tag.stable {
+      color: var(--teal);
+      background: rgba(21, 95, 91, 0.08);
+    }
+
+    .tag.gap {
+      color: var(--amber);
+      background: rgba(183, 123, 36, 0.1);
+    }
+
+    .tag.down {
+      color: var(--red);
+      background: rgba(182, 72, 50, 0.08);
+    }
+
+    .note {
+      border-left-color: var(--red);
+      border-radius: 0;
+      background: rgba(246, 227, 220, 0.72);
+      color: #4c352d;
+    }
+
+    .good {
+      border-top-color: var(--teal);
+    }
+
+    .bad {
+      border-top-color: var(--red);
+    }
+
+    .year-step {
+      border-radius: 0;
+      background: rgba(255, 252, 244, 0.78);
+      border-top: 5px solid var(--teal);
+    }
+
+    .year-step strong {
+      color: var(--red);
+      font-family: "Noto Serif SC", "Songti SC", serif;
+    }
+
+    .sources {
+      color: var(--muted);
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 860px) {
+      .masthead {
+        grid-template-columns: 1fr;
+      }
+
+      .masthead::after {
+        display: none;
+      }
+
+      .verdict-rail {
+        min-height: 0;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .verdict-rail::before {
+        font-size: 42px;
+      }
+
+      .masthead-main {
+        padding: 28px 22px;
+      }
+
+      .section {
+        padding-left: 0;
+      }
+
+      .section-kicker {
+        position: static;
+        display: block;
+        max-width: none;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        background-size: auto, 30px 30px, 30px 30px, auto;
+      }
+
+      .page {
+        width: 100%;
+        padding: 14px 12px 44px;
+      }
+
+      .topbar {
+        margin-bottom: 20px;
+      }
+
+      button {
+        max-width: none;
+      }
+
+      .masthead {
+        background: rgba(255, 252, 244, 0.88);
+      }
+
+      .verdict-rail {
+        width: auto;
+        height: auto;
+        margin-bottom: 0;
+      }
+
+      .verdict-rail::after {
+        font-size: 11px;
+      }
+
+      .masthead-main {
+        padding: 22px 16px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 12vw, 48px);
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .metric {
+        border-top-width: 4px;
+        min-height: auto;
+      }
+
+      .section {
+        margin-top: 30px;
+        padding-top: 30px;
+      }
+
+      .section > h2 {
+        font-size: 28px;
+      }
+
+      tr {
+        border-radius: 0;
+        background: rgba(255, 252, 244, 0.9);
+        border-top: 4px solid var(--teal);
+      }
+    }
+
     @media print {
       body {
         background: #fff;
