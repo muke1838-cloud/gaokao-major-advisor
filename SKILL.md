@@ -17,17 +17,38 @@ Help a Gaokao student evaluate whether a target major still leads to promising i
 - Separate evidence from judgment: show what the sources say, then explain the inference.
 - Avoid saying a major is simply "good" or "bad"; judge fit by student profile, entry barriers, risk, and four-year outlook.
 - Use the current date to calculate the forecast year. If today is 2026, forecast the student's situation around 2030.
+- Treat the major name as the minimum input, not the full decision context. Personalize the conclusion when province, score/rank, school tier, postgraduate tolerance, city preference, family pressure, or risk preference are available.
+- If the input is not an official college major, do not force it into a normal report. Explain the mismatch, map it to credible official majors or career routes, and warn when it is unsuitable as a direct employment-oriented major bet.
+
+## Input Contract
+
+Required:
+- Target major or intended study direction.
+
+Useful optional fields:
+- Province and score/rank band.
+- Target school tier: 985, 211, Double First-Class, ordinary public undergraduate, private undergraduate, junior college, or uncertain.
+- Undergraduate or junior-college route if known.
+- Preferred city, region, or city tier.
+- Family budget or pressure to earn income quickly.
+- Willingness to pursue postgraduate study, standardized training, licenses, certificates, or long-term study.
+- Interest areas and disliked work styles.
+- Risk preference: stable, balanced, or high-upside.
+- Whether the student accepts relocation, overtime, shifts, field work, or heavy social interaction.
+- Family, city, or industry resources if the user volunteers them.
+
+If only the major is provided, continue with a national/general report and explicitly label the assumptions. Do not block the analysis with repeated questions.
 
 ## Workflow
 
 1. Clarify the input.
-   - Required: target major.
-   - Useful: province, score/rank band, preferred city, family budget, tolerance for postgraduate study, interests, disliked work styles, risk preference.
+   - Use the input contract above.
    - If only a major is provided, continue with a national/general analysis and state the assumptions.
 
 2. Normalize the major.
    - Identify the official major name, discipline category, similar majors, common misunderstandings, and typical core courses.
    - Split the major into hard skills, transferable skills, credential requirements, and likely postgraduate needs.
+   - If it is a non-standard, folk, religious, hobby, job-title, or industry-direction input, first map it to official major choices and explain the limits.
 
 3. Map to industries and jobs.
    - Group opportunities into `主航道`, `相邻航道`, and `备选航道`.
@@ -53,11 +74,13 @@ Help a Gaokao student evaluate whether a target major still leads to promising i
 7. Forecast four-year potential.
    - Classify each route as `上升`, `稳定`, `看人差距大`, or `下降`.
    - Consider AI/automation, industrial upgrading, government policy, capital spending, demographics, supply of graduates, and credential inflation.
+   - Score the route across demand growth, policy support, technology impact, entry barrier, supply pressure, salary upside, stability, and major fit. Use `references/research-framework.md` for the scoring rubric.
    - State leading indicators the student should keep watching during college.
 
 8. Give the decision recommendation.
    - Provide a concise verdict: `推荐`, `谨慎推荐`, `不优先推荐`, or `只适合特定学生`.
    - Explain who fits this major, who should avoid it, and what to do during college to preserve career options.
+   - Adjust the verdict by likely school tier and city tier when the user provides province, score/rank, or target institutions.
    - Include alternatives: adjacent majors, double-major/minor choices, certifications, internships, competitions, or postgraduate directions.
 
 ## Output Shape
@@ -68,6 +91,11 @@ Use Markdown only when:
 - the user explicitly asks for a quick text answer,
 - the user is brainstorming before requesting a full report,
 - web/current-data access is unavailable and the user only wants a framework.
+
+If web/current-data access is unavailable:
+- Do not invent current salary, employer tiers, policies, or hiring demand.
+- Produce a framework-only report or a clearly marked unverified draft.
+- Mark all current-data claims as `待验证`, and tell the user which evidence must be refreshed.
 
 When creating the report:
 
@@ -82,17 +110,20 @@ Use `references/report-template.md` only as the content outline behind the webpa
 Minimum sections:
 
 1. 结论先行
-2. 专业拆解
-3. 行业和岗位匹配
-4. 公司层级与薪资样本
-5. 趋势、政策和科技影响
-6. 四年后判断
-7. 适合/不适合人群
-8. 大学四年行动建议
-9. 信息来源与不确定性
+2. 用户画像与分析假设
+3. 专业拆解
+4. 行业和岗位匹配
+5. 公司层级与薪资样本
+6. 趋势、政策和科技影响
+7. 四年后判断
+8. 不同学校层次和城市层级下的结论变化
+9. 适合/不适合人群
+10. 大学四年行动建议
+11. 信息来源与不确定性
 
 ## References
 
+- `references/intake-template.md`: Use when asking the user for optional context or building a prompt for another agent.
 - `references/research-framework.md`: Use for evidence gathering, company tiering, salary handling, trend scoring, and risk rules.
 - `references/report-template.md`: Use for the final Chinese report structure.
 - `references/web-report-guide.md`: Use when creating a standalone webpage report.

@@ -15,9 +15,9 @@ Use this guide for every complete major analysis report. The default deliverable
 
 ## Design Direction
 
-Archetype: editorial consulting report.
+Archetype: editorial magazine report.
 
-Differentiator: a visible verdict rail at the top that turns the whole report into a decision document, not a long article.
+Differentiator: a magazine-style issue rail and strong editorial masthead, while preserving decision-report clarity.
 
 Rules:
 - Lead with the recommendation, target graduation year, and biggest risk.
@@ -33,33 +33,42 @@ Rules:
    - Major, forecast year, recommendation, trend label, generated date.
    - 3-5 key reasons and 1-3 biggest risks.
 
-2. Major breakdown
-   - Discipline category, course base, core skills, common misunderstanding, postgraduate need.
+2. User profile and assumptions
+   - Province/rank/school tier/city/postgraduate tolerance/family pressure/risk preference when known.
+   - Explicit assumptions when missing.
 
-3. Industry and job routes
+3. Major breakdown
+   - Discipline category, course base, core skills, common misunderstanding, postgraduate need.
+   - Official-major check; if the input is not an official major, show safer official alternatives.
+
+4. Industry and job routes
    - Route, industry, job titles, major fit, threshold, four-year judgment.
 
-4. Employer tiers and salary samples
+5. Employer tiers and salary samples
    - Head, middle, and long-tail/regional tiers.
    - 3 representative employers per tier where evidence allows.
    - Salary ranges by fresh graduate, 1-3 years, and 3-5 years.
+   - Evidence confidence: 高, 中, 低, or 待验证.
 
-5. Policy, technology, and market forces
+6. Policy, technology, and market forces
    - Policy, AI/technology, industry cycle, talent supply.
 
-6. Four-year outlook
+7. Four-year outlook
    - Jobs, plain-language trend labels, reasons, warning signals.
 
-7. Fit and misfit profiles
+8. School-tier and city adjustment
+   - Explain how the verdict changes for strong-school, ordinary-undergraduate, junior-college, first-tier-city, and local-stability scenarios where relevant.
+
+9. Fit and misfit profiles
    - Who should consider the major and who should avoid it.
 
-8. College action plan
+10. College action plan
    - Year-by-year actions.
 
-9. Alternative majors
+11. Alternative majors
    - Alternatives, why they may be better, tradeoffs.
 
-10. Sources and uncertainty
+12. Sources and uncertainty
    - Source name, date, link, and what it proves.
    - Data gaps and assumptions.
 
@@ -70,6 +79,7 @@ Rules:
 - Preserve the salary disclaimer.
 - If a section has weak evidence, keep the section and mark it as `公开信息不足` or `待验证`.
 - Escape user-provided text for HTML if generating programmatically.
+- Keep the CSS as one coherent style system. Do not stack old skins under new override skins in public templates.
 
 ## Quick Validation
 

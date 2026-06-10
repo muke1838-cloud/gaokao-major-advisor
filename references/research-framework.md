@@ -34,6 +34,27 @@ Examples:
 - `生物科学` often needs postgraduate study for stronger research or industry roles.
 - `计算机科学与技术` maps broadly, but job quality depends heavily on project ability and school tier.
 
+## Non-Official Or Ambiguous Inputs
+
+Many users enter job names, folk fields, religious studies, hobbies, or social labels instead of official college majors. Handle these carefully.
+
+First classify the input:
+
+| Input type | Examples | Response pattern |
+| --- | --- | --- |
+| Job or service name | 陪护, 月嫂, 收纳师 | Explain it is not usually a standard major; map to nursing, elderly care, rehabilitation, social work, health service management, or vocational routes when relevant. |
+| Folk or non-academic field | 风水学, 命理 | Explain the official-major mismatch; map only to credible adjacent fields such as architecture, urban planning, geography, psychology, folklore, or cultural studies if appropriate. |
+| Religious or humanities field | 佛学, 神学 | Explain whether it is a formal academic/religious-study path; separate faith interest from employment-oriented major choice. |
+| Niche professional direction | 文物鉴定, 奢侈品鉴定 | Map to archaeology, museology, cultural relics protection, art history, materials science, or vocational appraisal routes. |
+| Misspelled or colloquial major | 计算机与科学 | Infer the likely official major, state the correction, and continue. |
+
+Rules:
+- Do not pretend a non-official input is a normal undergraduate major.
+- Do not dismiss it with a single sentence. Give official alternatives and realistic career routes.
+- If the route depends heavily on family resources, apprenticeship, locality, religious institution, or informal market trust, say so directly.
+- If it is unsuitable as the main employment-oriented college major for most students, use `不优先推荐` or `只适合特定学生`.
+- If the user is expressing interest rather than a major choice, suggest a safer major plus hobby/minor/research path.
+
 ## Industry And Job Mapping
 
 Classify opportunities:
@@ -140,6 +161,18 @@ Score each job route from 1 to 5:
 | Stability | Is the role cyclical, subsidy-driven, or capital-market dependent? |
 | Major fit | Does the major directly prepare the student? |
 
+Suggested scoring anchors:
+
+| Score | Meaning |
+| --- | --- |
+| 5 | Strong positive evidence from multiple recent sources |
+| 4 | Positive evidence, but with visible constraints |
+| 3 | Mixed or moderate evidence |
+| 2 | Weak evidence or meaningful deterioration risk |
+| 1 | Clear negative evidence or very poor fit |
+
+Use the score as a reasoning aid, not as a fake precision metric. In the report, show a concise scorecard only if it helps users understand the verdict.
+
 Convert the evidence into one of four labels:
 
 | Label | Meaning |
@@ -156,6 +189,22 @@ Use plain-language labels in final reports:
 - `下降`: 机会变少，薪资、岗位质量或入门机会可能变差。
 
 Most routes should be `看人差距大` unless evidence clearly supports another label.
+
+## School-Tier And City Adjustment
+
+The same major can lead to different outcomes depending on the student's likely school tier and city.
+
+Always consider:
+- Top universities can improve access to head employers, graduate programs, research labs, and selective internships.
+- Ordinary undergraduate outcomes depend more on practical projects, certificates, internship density, and local employer base.
+- Junior-college routes should focus on applied skills, licenses, local demand, and upgrade paths instead of pretending they match elite-track hiring.
+- First-tier and new first-tier cities usually offer more head-company roles but stronger competition and living-cost pressure.
+- Provincial capitals and regional cities may offer better stability or family support but lower salary ceilings.
+
+When the user provides score/rank, school tier, or city preference, add a short section explaining how the verdict changes under:
+- Strong school/platform scenario
+- Ordinary undergraduate scenario
+- Local or lower-mobility scenario
 
 ## Risk Rules
 
@@ -177,6 +226,11 @@ Use four verdicts:
 | 谨慎推荐 | Opportunity exists, but student must accept constraints such as postgraduate study, city concentration, or heavy competition |
 | 不优先推荐 | Better alternatives exist for the same goal, or the risk/reward is weak |
 | 只适合特定学生 | Good only for students with specific interests, resources, academic strength, or risk preference |
+
+Personalization modifiers:
+- Upgrade the verdict only when the user's profile reduces the main risks, such as strong school tier, willingness to study long-term, clear interest, or city access.
+- Downgrade the verdict when the user's profile conflicts with the route, such as high family income pressure plus long training, no postgraduate tolerance plus research-heavy major, or local-only preference plus city-concentrated jobs.
+- If the result depends mostly on student effort, use `谨慎推荐` or `只适合特定学生`, not a blanket `推荐`.
 
 End with practical choices:
 - Better adjacent majors
