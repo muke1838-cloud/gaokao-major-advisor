@@ -1,71 +1,147 @@
-# Gaokao Major Advisor
+# 高考专业前景分析顾问
 
-Gaokao Major Advisor is an AI skill for helping Chinese Gaokao students, parents, counselors, and education advisors evaluate university major choices.
+`gaokao-major-advisor` 是一个面向中国高考学生、家长和升学顾问的 AI Skill。
 
-It connects a major to realistic industries, job routes, employer tiers, salary samples, policy and technology trends, and a four-year career outlook.
+它的目标不是简单介绍某个专业，而是帮助用户把一个专业和未来真实就业路径连接起来：
 
-## What It Does
+> 专业 -> 行业 -> 岗位 -> 公司层级 -> 薪资样本 -> 政策和科技趋势 -> 四年后就业判断 -> 报考建议
 
-- Normalizes official and non-official major inputs.
-- Maps majors to industries, job routes, and entry requirements.
-- Compares head, middle, and long-tail or regional employers.
-- Estimates salary ranges with source and confidence notes.
-- Considers AI, policy, industry cycles, city differences, school tier, postgraduate requirements, and family constraints.
-- Produces a standalone HTML report in an editorial magazine style.
+最终默认生成一份可以直接打开的独立 HTML 网页报告。
 
-## Core Inputs
+## 适合什么场景
 
-Only the target major is required.
+当用户想知道下面这些问题时，可以使用这个 Skill：
 
-Optional context improves personalization:
+- 某个专业四年后还值不值得报？
+- 这个专业毕业后能去哪些行业和岗位？
+- 这些岗位对应哪些头部、腰部、长尾或区域型公司？
+- 不同公司层级的薪资待遇大概是什么区间？
+- AI、政策、行业周期会不会影响这个专业？
+- 普通本科、强校、专科、本地就业的结论是否不同？
+- 如果不适合报，有哪些替代专业？
 
-- Province and score or rank band
-- Target school tier
-- Undergraduate or junior-college route
-- Preferred city or region
-- Family income pressure
-- Willingness to pursue postgraduate study, standardized training, certificates, or licenses
-- Risk preference
-- Interests and disliked work styles
-- Family, city, or industry resources
+## 核心能力
 
-If only a major is provided, the skill generates a national/general analysis and states the assumptions.
+- 判断用户输入是不是正规本科/专科专业。
+- 处理非正规或口语化输入，例如“陪护”“风水学”“佛学”“文物鉴定”“计算机与科学”。
+- 将专业拆解为学科类别、核心课程、核心能力和常见误区。
+- 将专业映射到主航道、相邻航道和备选航道。
+- 对岗位进行四年后趋势判断：`上升`、`稳定`、`看人差距大`、`下降`。
+- 分析头部、腰部、长尾/区域型公司代表。
+- 给出应届、1-3 年、3-5 年薪资区间，并标注可信度。
+- 结合学校层次、城市层级、家庭压力、读研意愿和风险偏好调整结论。
+- 生成杂志风的静态 HTML 网页报告。
 
-## Output
+## 输入信息
 
-The default output is a standalone static HTML report, not a long chat reply.
+最低只需要用户提供一个专业名称。
 
-The report includes:
+如果用户只提供专业名称，Skill 会生成“全国通用版分析”，并明确说明没有纳入省份、位次、学校层次、城市偏好和家庭约束。
 
-1. Verdict first
-2. Student profile and assumptions
-3. Major breakdown
-4. Industry and job mapping
-5. Employer tiers and salary samples
-6. Policy, technology, and market trends
-7. Four-year job outlook
-8. School-tier and city-tier adjustment
-9. Fit and misfit profiles
-10. College action plan
-11. Alternative majors
-12. Sources and uncertainty
+为了更个性化，建议补充：
 
-## Design Direction
+- 所在省份
+- 高考分数或位次区间
+- 目标院校层次：985、211、双一流、普通公办本科、民办本科、专科等
+- 本科或专科路径
+- 目标城市或城市层级
+- 家庭经济压力
+- 是否接受读研、规培、考证或长期学习
+- 风险偏好
+- 兴趣方向
+- 不喜欢的工作类型
+- 是否接受异地、加班、轮班、一线实践
+- 家庭资源、城市资源或行业资源
 
-HTML reports use a required editorial magazine report style:
+## 输出内容
 
-- Paper-like background
-- Ink-like body text
-- Muted teal, vermilion, and amber accents
-- Strong masthead and issue rail
-- Mobile-responsive table cards
-- Inline CSS and JavaScript
-- No CDN, external fonts, build tools, or server dependency
+完整报告默认输出为独立 HTML 网页，不是聊天里的长篇文字。
 
-## Repository Structure
+报告至少包含：
+
+1. 结论先行
+2. 用户画像与分析假设
+3. 专业拆解
+4. 行业和岗位匹配
+5. 公司层级与薪资样本
+6. 政策、科技和市场趋势
+7. 四年后就业判断
+8. 学校层次和城市层级下的结论变化
+9. 适合人群 / 不适合人群
+10. 大学四年行动建议
+11. 可替代专业
+12. 信息来源与不确定性
+
+## 网页设计
+
+网页报告采用强制的“深度杂志长文风 / Editorial Magazine Report”。
+
+设计特点：
+
+- 米白纸质背景
+- 深色正文
+- 深青绿色、朱红色、琥珀色作为强调色
+- 顶部有专题式 masthead
+- 有 `04 YEAR OUTLOOK` / `专业前景专题` 这类期刊式视觉元素
+- 桌面端用表格承载复杂信息
+- 手机端表格自动转为字段卡片
+- CSS 和少量 JavaScript 全部内联
+- 不依赖 CDN、外部字体、服务器或构建工具
+- 支持“打印 / 保存 PDF”
+
+## 使用示例
+
+基础用法：
+
+```text
+使用 gaokao-major-advisor，帮我分析“计算机科学与技术”这个专业四年后的就业前景。
+```
+
+带个性化信息：
+
+```text
+使用 gaokao-major-advisor，帮我分析“临床医学”。
+
+省份：广东
+位次：约 18000
+目标院校层次：211 或强双非
+是否接受读研/规培：接受
+家庭经济压力：中
+风险偏好：求稳
+目标城市：广州、深圳或省会城市
+```
+
+非正规专业输入示例：
+
+```text
+使用 gaokao-major-advisor，帮我分析“陪护”这个方向适不适合报。
+```
+
+Skill 会先判断“陪护”不是常规本科专业，再映射到护理、智慧健康养老服务与管理、康复治疗、社会工作等更接近的正规路径。
+
+## 证据要求
+
+Skill 要求尽量使用最新公开信息，包括：
+
+- 政府文件
+- 官方统计
+- 行业报告
+- 公司招聘页
+- 上市公司资料
+- 主流招聘平台公开样本
+- 可信媒体或研究机构资料
+
+禁止编造薪资、公司层级、招聘需求或政策支持。
+
+如果无法联网或无法获取最新资料，必须明确说明：
+
+> 当前数据未验证，本报告只能作为分析框架，不应视为最新就业和薪资结论。
+
+## 目录结构
 
 ```text
 .
+├── README.md
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
@@ -78,36 +154,18 @@ HTML reports use a required editorial magazine report style:
     └── web-report-guide.md
 ```
 
-## Usage
+## 公开发布说明
 
-Use this skill when a user asks to evaluate a university major, choose a Gaokao application direction, compare major-related jobs, or forecast the career potential of a major four years after enrollment.
+这个仓库只包含 Skill 本身，不包含：
 
-Example prompt:
+- 用户生成的真实报告
+- 本地项目笔记
+- 私有路径
+- API Key、Token 或账号信息
 
-```text
-使用 gaokao-major-advisor，帮我分析“计算机科学与技术”这个专业四年后的就业前景。
-```
+## English Summary
 
-For better personalization:
-
-```text
-使用 gaokao-major-advisor，帮我分析“临床医学”。
-省份：广东
-位次：约 18000
-目标院校层次：211 或强双非
-是否接受读研/规培：接受
-家庭经济压力：中
-风险偏好：求稳
-目标城市：广州、深圳或省会城市
-```
-
-## Evidence Rules
-
-The skill requires fresh research for current industry, policy, employer, and salary claims.
-
-If web/current-data access is unavailable, the output must clearly say the current-data part is unverified and should only be treated as a framework.
-
-The skill must not fabricate salary data, hiring demand, employer tiers, or policy support.
+Gaokao Major Advisor is an AI skill for evaluating Chinese university major choices. It maps a major to industries, job routes, employer tiers, salary samples, policy and technology trends, and a four-year career outlook. The default output is a standalone, mobile-responsive HTML report in an editorial magazine style.
 
 ## License
 
